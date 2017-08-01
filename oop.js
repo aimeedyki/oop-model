@@ -16,23 +16,25 @@ class House {
   addParlours(numParlours){
     this.parlours+=parlours;
   }
-  
-  get parlours(){
+  numberOfRooms(){
+    console.log("there are "+this.rooms+" rooms");
+  }
+  get parlour(){
     return this.parlours;
   }
-  get rooms(){
+  get room(){
     return this.rooms;
   }
-  get bathrooms(){
+  get bathroom(){
     return this.bathrooms;
   }
-   set parlours(newParlours){
+  set parlour(newParlours){
     this.parlours= newParlours;
   }
-  set rooms(newRooms){
+  set room(newRooms){
     this.rooms = newRooms;
   }
-  set bathrooms(newBathrooms){
+  set bathroom(newBathrooms){
     this.bathrooms = newBathrooms;
   }
   //
@@ -48,9 +50,9 @@ class House {
 }
 //inheritance and polymorphism
 class Bungalow extends House{
-  constructor(rooms, bathrooms, parlours){
+  constructor(room, bathroom, parlour){
     
-    super(rooms, bathrooms, parlours);
+    super(room, bathroom, parlour);
     
   }
   
@@ -61,35 +63,37 @@ class Bungalow extends House{
 
 
 class StoryBuilding extends House{
-    constructor(rooms, bathrooms, parlours, floors, pentHouse){
-     super(rooms, bathrooms, parlours);
-    this.floors= floors;
-    this.pentHouse= pentHouse;
+    constructor(room, bathroom, parlour, floor, pentHouse){
+     super(room, bathroom, parlour);
+    this.floors= floor;
+    this._pentHouse= pentHouse;
   }
-  hasPenthouse(pentHouse){
-    if (this.pentHouse === 0){
+  hasPenthouse(numPentHouse){
+    if (numPentHouse === '0'){
       return "no";
     }
     else{
-      return this.pentHouse;
+      return numPentHouse;
     }
   }
   houseFeatures(){
-    console.log ("This house has"+this.rooms+" rooms, " + this.parlours+" parlors,"+this.bathrooms+"bathrooms and "+this.floors+" floors with "+ this.hasPenthouse(penthouse)+ " penthouse");
+    console.log ("This house has"+this.rooms+" rooms, " + this.parlours+" parlors,"+this.bathrooms+" bathrooms and "+this.floors+" floors with "+ this.hasPenthouse(this._pentHouse)+ " penthouse");
   }
   
   
 }
 
 class SelfContained extends Bungalow{
-  constructor(rooms, bathrooms){
-     super(rooms, bathrooms);
+  constructor(room, bathroom){
+     super(room, bathroom);
   }
 }
 
 let lakeview = new Bungalow(2,2,1);
-let terrace = new StoryBuilding(4,6,1,1);
+let terrace = new StoryBuilding(4,6,1,'1');
 let boysQuarters = new SelfContained(1,1);
-lakeview.rooms(addroom(2));
+lakeview.numberOfRooms();
+lakeview.addRooms(2);
+lakeview.numberOfRooms();
 terrace.houseFeatures();
-boysQuarters.bathrooms();
+boysQuarters.bathroom();
