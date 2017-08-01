@@ -1,0 +1,22 @@
+{
+  "name": "oopclass",
+  "version": "1.0.0",
+  "description": "a program that demonstrates OOP model",
+  "main": "oop.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimeedyki/oop-model.git"
+  },
+  "keywords": [
+    "OOP"
+  ],
+  "author": "amarachi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aimeedyki/oop-model/issues"
+  },
+  "homepage": "https://github.com/aimeedyki/oop-model#readme"
+}
