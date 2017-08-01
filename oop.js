@@ -69,11 +69,11 @@ class StoryBuilding extends House{
     this._pentHouse= pentHouse;
   }
   hasPenthouse(numPentHouse){
-    if (numPentHouse === '0'){
+    if (numPentHouse === 0){
       return "no";
     }
     else{
-      return numPentHouse;
+      return "a";
     }
   }
   houseFeatures(){
@@ -87,13 +87,23 @@ class SelfContained extends Bungalow{
   constructor(room, bathroom){
      super(room, bathroom);
   }
+  hasBathroom(numBathrooms){
+    if (numBathrooms === 0){
+      console.log("there are no bathroms");
+      }
+    else{
+      console.log("there is a bathroom");
+    }
+  }
 }
 
 let lakeview = new Bungalow(2,2,1);
-let terrace = new StoryBuilding(4,6,1,'1');
+let terrace = new StoryBuilding(4,6,1,1);
 let boysQuarters = new SelfContained(1,1);
 lakeview.numberOfRooms();
 lakeview.addRooms(2);
 lakeview.numberOfRooms();
 terrace.houseFeatures();
-boysQuarters.bathroom();
+boysQuarters.hasBathroom();
+
+
